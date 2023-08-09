@@ -4,9 +4,30 @@ Halaman ini adalah perantara dengan dashboard dan halaman lainnya. Halaman ini a
 
 import Image from "next/image";
 
-<Image src="/home.png" alt="Hello" width={1600} height={755} paddingTop={20} />
+<Image src="/home.png" alt="Hello" width={1600} height={755} layout="responsive" loading="lazy" />
 
 ## Navbar Halaman Portal
 
-Pada bagian bawah menampilkan 3 informasi singkat mengenai hasil kinerja departemen. Informasi ini diambil dari database. Informasi ini akan berubah sesuai dengan data yang ada di database. 3 informasi singkat tersebut adalah: `Metode Refer to FI VI`, `Projects` dan `Validated Methode`.
-Dan juga terdapat informasi sosial akun departemen.
+Pada bagian navbar ada 3 group :
+
+1. Pada bagian kiri atas terdapat logo perusahaan dari PT. Genero Pharmaceuticals.
+2. Pada bagian tengah terdapat menu navigasi yang berisi 4 menu yaitu :
+   - `Home` : Menu ini akan menampilkan halaman portal.
+   - `Input Data` : Menu ini akan menampilkan halaman input data.
+   - `Stock RS/WS` : Menu ini akan mengarahkan ke URL tertentu terkait data stock RS/WS yang ada di andev.
+   - `About` : Menu ini akan menampilkan halaman tentang apliasi `Andev Dashboard`.
+3. Pada bagian kanan terdapat button `e-Ticket` fungsi ini untuk membuat e-ticket IT support dari Arya Noble.
+
+## Body Halaman Portal
+
+Pada bagian body terdapat 2 bagian :
+
+1. Bagian sebelah kiri terdapat tombol `Start Now` yang akan mengarahkan ke halaman dashboard.
+2. Bagian sebelah kanan terdapat slide gambar yang menampilkan informasi singkat mengenai aplikasi `Andev Dashboard`. Gambar yang digunakan `statis`.
+
+## Footer Halaman Portal
+
+Pada bagian footer terdapat 2 bagian :
+
+1. Pada bagian kiri menampilkan 3 informasi singkat mengenai hasil kinerja departemen. Informasi ini diambil dari database. Informasi ini akan berubah sesuai dengan data yang ada di database. 3 informasi singkat tersebut adalah: `Metode Refer to FI VI`, `Projects` dan `Validated Methode`.
+2. Pada bagian kanan menampilkan sosial media dari departemen Andev.
