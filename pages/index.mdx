@@ -1,11 +1,28 @@
-# Introduction
- 
-Welcome to Nextra! This is a basic docs template. You can use it as a starting point for your own project :)
+# Pendahuluan
 
-## What is Nextra?
+`Andev Dashboard` adalah web app yang digunakan untuk memonitoring data dari aplikasi Andev (Analytical Development) pada perusahan PT. Genero Pharmaceuticals. Dengan adanya aplikasi ini diharapkan dapat mempermudah dalam memonitoring data yang semula dilakukan secara manual dengan menggunakan excel menjadi web app yang dapat diakses oleh semua pihak yang berkepentingan.
 
-A **simple**, **powerful** and **flexible** site generation framework with everything you love from Next.js.
+## Stack apa saja yang digunakan?
 
-## Documentation
+`Andev Dashboard` menggunakan beberapa stack, diantaranya:
 
-The documentation is available at [https://nextra.site](https://nextra.site).
+- Laravel 9 + Vite 4.0
+- Laravel UI
+- Bootstrap 5.2.3
+- Blade template engine
+
+Beberapa tools lainnya yang digunakan :
+
+- ECharts 5.4.2
+- Datatables
+
+## Cara install
+
+1. Clone repository [andev dashboard](https://github.com/muchfahmiarif/andev-dashboard)
+2. Pilih branch `main`
+3. Jalankan perintah `composer install`
+4. Jalankan perintah `npm install`
+5. Copy `.env.example` menjadi `.env`
+6. Generate app key dengan perintah `php artisan key:generate`
+7. Migrate database dengan perintah `php artisan migrate`
+8. Run project dengan perintah `php artisan serve`dan `npm run dev`
