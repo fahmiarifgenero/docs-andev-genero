@@ -1,7 +1,37 @@
 {
-  "index": "Pendahuluan",
-  "portalPage": "Halaman Portal",
-  "advanced": "Advanced (A Folder)",
+  "index": {
+    "title": "Pendahuluan",
+    "theme": {
+      "breadcrumb": false
+    }
+  },
+  "halaman-portal": {
+    "title": "Halaman Portal",
+    "theme": {
+      "breadcrumb": false
+    }
+  },
+  "-": {
+    "title": "Dashboard",
+    "type": "separator"
+  },
+  "dashboard-development-journey": "Development Journey",
+  "dashboard-rpv-riv": "RPV & RIV",
+  "dashboard-report-analysis": "Report Analysis",
+  "dashboard-lembar-kerja-analis": "Lembar Kerja Analis",
+  "dashboard-jadwal-stabilita": "Jadwal Stabilita",
+  "--": {
+    "title": "Halaman Edit",
+    "type": "separator"
+  },
+  "---": {
+    "title": "Other",
+    "type": "separator"
+  },
+  "complience": "Complience",
+  "advanced": {
+    "title": "Advanced"
+  },
   "about": {
     "title": "About",
     "type": "page"
