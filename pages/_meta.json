@@ -29,6 +29,22 @@
       "breadcrumb": false
     }
   },
+  "----": {
+    "title": "Layout",
+    "type": "separator"
+  },
+  "layout-home": {
+    "title": "Layout Dashboard",
+    "theme": {
+      "breadcrumb": false
+    }
+  },
+  "layout-edit": {
+    "title": "Layout Halaman Edit",
+    "theme": {
+      "breadcrumb": false
+    }
+  },
   "-": {
     "title": "Dashboard",
     "type": "separator"
