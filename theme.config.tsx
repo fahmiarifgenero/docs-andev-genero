@@ -38,7 +38,11 @@ const config: DocsThemeConfig = {
   //   content: null,
   // },
   editLink: {
-    component: null,
+    component: ({ ...props }) => (
+      <a {...props} href={`https://google.com`} target="_blank" rel="noopener noreferrer">
+        Edit this page
+      </a>
+    ),
   },
   navbar: {
     extraContent: <a href="https://google.com">Hello</a>,
