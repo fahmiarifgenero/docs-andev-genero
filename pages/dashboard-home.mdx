@@ -1,5 +1,7 @@
 # Home
 
+Halaman dashboard home ini dapat di akses dengan URL `/home`
+
 ## Interface
 
 Tampilan awal dari aplikasi ini adalah sebagai berikut:
@@ -8,14 +10,72 @@ Tampilan awal dari aplikasi ini adalah sebagai berikut:
 
 Berikut bagian - bagian pada halaman homepage dashboard :
 
-- Pada bagian atas ada search bar, ketika diketik dan ditekan enter user akan diarahkan ke tab baru dan menampilkan hasil pencarian dari kata kunci yang dimasukkan.
-- Pada bagian pojok kanan atas terdapat menu informasi yang terdiri dari
+### Bagian Header
 
-  ![informasi home dashboard](/informasi-home-dashboard.png)
+Bagian headert terdapat logo, search bar, dan menu informasi.
 
-  Urutan informasi tersebut adalah sebagai berikut:
+1. Logo yang digunakan bersifat statis
+2. Search Bar yang digunakan bersifat statis, tidak dapat digunakan untuk mencari data
+3. Menu Informasi menampilkan informasi waktu, icon home, icon tanda tanya, dan icon user
 
-  1. Angka tersebut menunjukkan jam saat ini
-  2. Icon home yang akan mengarahkan user ke halaman portal
-  3. Icon tanda tanya yang akan mengarahkan user ke halaman bantuan
-  4. Icon orang yang akan memunculkan menu dropdown yang berisi menu logout dan menu profil
+   ![informasi home dashboard](/informasi-home-dashboard.png)
+
+   Urutan informasi tersebut adalah sebagai berikut:
+
+   1. Angka tersebut menunjukkan jam untuk wilayah Indonesia bagian barat
+   2. Icon home yang akan mengarahkan user ke halaman [portal](/halaman-portal)
+   3. Icon tanda tanya yang akan mengarahkan user ke halaman bantuan
+   4. Icon user yang akan memunculkan menu dropdown yang berisi menu logout dan menu profil
+      - Nama dan email user diambil dari data user yang sedang login
+      - Halaman edit akan mengarahkan user ke halaman edit data
+      - Log out akan mengarahkan user ke halaman [portal](/halaman-portal)
+
+### Bagian Navigation
+
+![Navbar dashboard](/dashboard-home/navbar.png)
+
+Navigasi untuk mengarahkan user ke halaman - halaman yang ada pada aplikasi ini.
+
+### Bagian Content
+
+![Body Content](/dashboard-home/content.png)
+
+Bagian kiri atas terdapat judul atau yang biasa disebut breadcrumb. Breadcrumb ini menunjukkan posisi user pada aplikasi ini. Breadcrumb ini bersifat statis. Pada bagian tengah terdapat grafik yang besar. Grafik ini menampilkan kesimpulan data yang ada pada database.
+
+Grafik menggunakan [`echart`](https://echarts.apache.org/en/index.html) dan menggunakan common js, berikut contoh penggunakan grafik pada halaman `home`
+
+```blade filename="resource/views/home.blade.php"
+@push('head-script')
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.2/dist/echarts.min.js"></script>
+@endpush
+```
+
+```blade filename="resource/views/home.blade.php"
+<div id="main-1" class="d-flex"></div>
+```
+
+```blade filename="resource/views/home.blade.php"
+<script type="text/javascript">
+  var myChart = echarts.init(document.getElementById('main-1'), null, {
+    width: 600,
+    height: 400
+  });
+
+  var option = {
+    // other options
+    series: [{ type: 'bar' }, { type: 'bar' }, { type: 'bar' },]
+  };
+
+  myChart.setOption(option);
+</script>
+```
+
+import { Callout } from "nextra/components";
+
+<Callout type="warning">Bagian grafik masih dalam tahap perancangan</Callout>
+
+Nantinya grafik akan menampilkan 5 data yaitu :
+
+1. Validated methode / metode yang telah divalidasi
+2. Methodes refer to FI VI / metode yang merujuk ke FI VI
+3.
