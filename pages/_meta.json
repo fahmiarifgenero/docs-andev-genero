@@ -24,6 +24,11 @@
     "title": "Halaman Edit",
     "type": "separator"
   },
+  "halaman-edit-development-journey": "Development Journey",
+  "halaman-edit-rpv-riv": "RPV & RIV",
+  "halaman-edit-report-analysis": "Report Analysis",
+  "halaman-edit-lembar-kerja-analis": "Lembar Kerja Analis",
+  "halaman-edit-jadwal-stabilita": "Jadwal Stabilita",
   "---": {
     "title": "Other",
     "type": "separator"

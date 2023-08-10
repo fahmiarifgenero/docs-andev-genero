@@ -1,23 +1,26 @@
-# Nextra Docs Template 
+# Docs Andev Dashboard
 
-This is a template for creating documentation with [Nextra](https://nextra.site).
+This documentation for Andev Dashboard from PT. Genero Pharmaceuticals.
 
-[**Live Demo →**](https://nextra-docs-template.vercel.app)
+[**See Documentation →**](https://nextra-docs-template.vercel.app)
 
-[![](.github/screenshot.png)](https://nextra-docs-template.vercel.app)
+[![](/public/docs-andev-dashboard.png)](https://docs-andev-genero.vercel.app/)
 
-## Quick Start
+## Tools Used for Andev Dashboard
 
-Click the button to clone this repository and deploy it on Vercel:
-
-[![](https://vercel.com/button)](https://vercel.com/new/clone?s=https%3A%2F%2Fgithub.com%2Fshuding%2Fnextra-docs-template&showOptionalTeamCreation=false)
+Tools used in this project:
+1. Laravel 9 + Vite 4
+2. Laravel UI
+3. Bootstrap 5.2.3
+4. Blade Template Engine
 
 ## Local Development
 
-First, run `pnpm i` to install the dependencies.
-
-Then, run `pnpm dev` to start the development server and visit localhost:3000.
-
-## License
-
-This project is licensed under the MIT License.
+1. Clone repository [andev dashboard](https://github.com/muchfahmiarif/andev-dashboard)
+2. Pilih branch `main`
+3. Jalankan perintah `composer install`
+4. Jalankan perintah `npm install`
+5. Copy `.env.example` menjadi `.env`
+6. Generate app key dengan perintah `php artisan key:generate`
+7. Migrate database dengan perintah `php artisan migrate`
+8. Run project dengan perintah `php artisan serve`dan `npm run dev`
