@@ -1,0 +1,58 @@
+# Login / Register System
+
+## File View
+
+import { FileTree } from "nextra/components";
+
+<FileTree>
+  <FileTree.Folder name="pages" defaultOpen>
+    <FileTree.File name="_meta.json" />
+    <FileTree.File name="..." />
+    <FileTree.File name="index.mdx" />
+    <FileTree.Folder name="about">
+      <FileTree.File name="_meta.json" />
+      <FileTree.File name="legal.md" />
+      <FileTree.File name="index.mdx" />
+    </FileTree.Folder>
+  </FileTree.Folder>
+</FileTree>
+
+## User Interface Halaman Register
+
+Halaman Register / Login didapatkan dari Laravel UI pada saat instalasi project menggunakan Auth Scaffolding `php artisan ui bootstrap --auth`. Dan untuk list user ada pada URL `/users`.
+![Register Page](/register-page.png)
+
+## Flow Register User
+
+Flow registrasi akun pada aplikasi ini adalah sebagai berikut:
+
+1. User melakukan registrasi pada URL `/register`.
+2. User memasukkan nama, email, password dan confirm password.
+3. User melakukan submit form.
+4. Setelah itu user menunggu hingga diberi akses oleh admin.
+
+## System Authentication
+
+Sistem autentikasi yang digunakan cukup sederhana, yaitu menggunakan `Auth::routes()` yang disediakan oleh Laravel. Untuk mengakses halaman `/dashboard` harus login terlebih dahulu. Jika belum login maka akan diarahkan ke halaman login. Jika sudah login maka akan diarahkan ke halaman `/dashboard`.
+Aplikasi ini tidak menggunakan faktor 2FA ataupun fitur lupa password. <mark>Jika user lupa password maka harus menghubungi admin untuk mereset akun</mark>
+
+Secara default validasi user yang berhasil registrasi dapat mengakses halaman `/registered`. Berikut database `user` di dalam `users`.
+
+![](/user/database-user.png)
+
+Perlu adanya penambahan column untuk menentukan level user. Level user yang dibutuhkan pada aplikasi ini ada 3 level, diantaranya :
+
+- Admin
+- User
+- Guest
+
+## Authorization
+
+import { Callout } from "nextra/components";
+
+<Callout type="info">Authorization dibuat dengan checkbox, admin dapat menentukan level user dan mendelete users</Callout>
+
+Halaman authorization <mark>belum dibuat</mark> dan <mark>belum diimplementasikan</mark>. URL untuk mengakses halaman authorization hanya `admin` oleh karena itu hanya ada 1 admin yang dapat mengakses halaman tersebut. Untuk mengakses halaman authorization dapat menggunakan URL `/admin`. Jika user yang mengakses halaman tersebut bukan admin maka akan diarahkan ke halaman `/dashboard`.
+Halaman authorization dibuat dengan sederhana, cukup dengan `checkbox` untuk menentukan level user. Admin dapat menambahkan user baru dengan level `user` dan `guest`. Admin juga dapat menghapus user yang sudah terdaftar.
+
+List user yang sudah terdaftar dapat dilihat pada URL `/users`.

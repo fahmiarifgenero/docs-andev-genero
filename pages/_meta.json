@@ -11,6 +11,24 @@
       "breadcrumb": false
     }
   },
+  "users": {
+    "title": "Login / Register System",
+    "theme": {
+      "breadcrumb": false
+    }
+  },
+  "error": {
+    "title": "Halaman Error",
+    "theme": {
+      "breadcrumb": false
+    }
+  },
+  "dashboard-home": {
+    "title": "Dashboard Home",
+    "theme": {
+      "breadcrumb": false
+    }
+  },
   "-": {
     "title": "Dashboard",
     "type": "separator"

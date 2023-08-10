@@ -3,9 +3,7 @@
 Halaman ini adalah perantara dengan dashboard dan halaman lainnya. Halaman ini akan menampilkan halaman dashboard jika user sudah login, dan akan menampilkan halaman login jika user belum login. Terdapat juga informasi singkat mengenai hasil kinerja departemen yang diambil dari database.
 Di halaman portal ini banyak menampilkan data yang `statis`, untuk data `dinamis` hanya ada pada bagian footer bagian kiri. Berikut adalah tampilan halaman portal.
 
-import Image from "next/image";
-
-<Image src="/home.png" alt="Hello" width={1600} height={755} layout="responsive" loading="lazy" />
+![Halaman portal](/home.png)
 
 ## Navbar Halaman Portal
 
@@ -21,9 +19,13 @@ Pada bagian navbar ada 3 group :
 
 ## Body Halaman Portal
 
+import { Callout } from "nextra/components";
+
+<Callout type="info">Tombol `Start now` pada portal belum mengarah ke URL login/registrasi</Callout>
+
 Pada bagian body terdapat 2 bagian :
 
-1. Bagian sebelah kiri terdapat tombol `Start Now` yang akan mengarahkan ke halaman dashboard.
+1. Bagian sebelah kiri terdapat tombol `Start Now` yang akan mengarahkan ke halaman login page di URL `/login`.
 2. Bagian sebelah kanan terdapat slide gambar yang menampilkan informasi singkat mengenai aplikasi `Andev Dashboard`. Gambar yang digunakan `statis`.
 
 ## Footer Halaman Portal

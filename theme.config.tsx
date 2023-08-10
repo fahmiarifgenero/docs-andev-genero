@@ -1,16 +1,15 @@
 import React from "react";
 import { DocsThemeConfig } from "nextra-theme-docs";
-import { useRouter } from "next/router";
 
 const config: DocsThemeConfig = {
-  useNextSeoProps() {
-    const { asPath } = useRouter();
-    if (asPath !== "/") {
-      return {
-        titleTemplate: "%s - Docs Andev Dashboard",
-      };
-    }
-  },
+  // useNextSeoProps() {
+  //   const { asPath } = useRouter();
+  //   if (asPath !== "/") {
+  //     return {
+  //       titleTemplate: "%s - Docs Andev Dashboard",
+  //     };
+  //   }
+  // },
   logo: <span>Andev Dashboard</span>,
   project: {
     link: "https://github.com/shuding/nextra-docs-template",
@@ -34,9 +33,6 @@ const config: DocsThemeConfig = {
     defaultMenuCollapseLevel: 1,
   },
   faviconGlyph: "📝",
-  // feedback: {
-  //   content: null,
-  // },
   editLink: {
     component: ({ ...props }) => (
       <a {...props} href={`https://google.com`} target="_blank" rel="noopener noreferrer">
