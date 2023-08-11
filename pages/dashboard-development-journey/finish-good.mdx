@@ -1,0 +1,81 @@
+# Development journey - Finish Good
+
+Halaman dashboard home ini dapat di akses dengan URL `/development-journey/finish-good`
+
+Berikut filetree pada halaman ini:
+
+import { FileTree } from "nextra/components";
+
+<FileTree>
+  <FileTree.Folder name="resource" defaultOpen>
+    <FileTree.Folder name="views" defaultOpen>
+      <FileTree.Folder name="pages" defaultOpen>
+        <FileTree.Folder name="development-journey" defaultOpen>
+          <FileTree.Folder name="finish-good" defaultOpen>
+            <FileTree.File name="index.blade.php" />
+            <FileTree.File name="detail.blade.php" />
+          </FileTree.Folder>
+        </FileTree.Folder>
+      </FileTree.Folder>
+    </FileTree.Folder>
+  </FileTree.Folder>
+</FileTree>
+
+## Halaman Depan
+
+Halaman depan ini menampilkan timelin dari suatu produk.
+
+![Halaman Depan](/development-journey/finish-good-1.png)
+
+### List Product
+
+List produk terdapat pada pojok kanan atas menggunakan `select` yang dapat di pilih sesuai dengan produk yang di inginkan. List produk tersebut di ambil dari database dan dapat ditambahkan atau dihapus hanya oleh `admin`. Untuk query produk dapat menggunakan URL parameter `?product_id=1` atau `?product_name=nama_produk`.
+
+### List parameter
+
+Contoh pada produk Aza 20 Cream menampilkan 3 parameter yaitu `BPO`, `Adapalene` dan `Nipagin`. Data tersebut di ambil dari database dan dapat di tambahkan atau dihapus hanya oleh `admin`.
+
+### Timeline Product dalam 1 parameter
+
+Timeline urut dari atas kebawah yaitu lebih baru ke lebih lama. Pada bagian kiri timeline terdapat waktu menunjukkan `timestamp` saat pertama kali data dibuat. Pada bagian kanan dari titik terdapat judul dan dibawah terdapat deskripsi singkat dari judul tersebut. Pada bagian kanan terdapat `badge` yang menunjukkan status dari data tersebut. Terdapat 4 status yaitu :
+
+1. `riset`
+2. `pending`
+3. `work in progress`
+4. `done`
+
+Status tersebut dapat di ubah hanya oleh `office`. Timeline ini dalam 1 parameter, untuk isi parameter lainnya serupa dengan ini.
+
+## Halaman detail
+
+Untuk mengarahkan ke halaman detail dibutuhkan query pada URL _contoh:_ `?id=1`. Pada halaman detail menampilkan detail dari satu timeline, misal ambil 1 timeline dari parameter `BPO` pada produk `Aza 20 Cream`.
+
+![Pilih halaman detail](/development-journey/finish-good-detail-2.png)
+
+Selanjutnya user akan diarahkan ke bagian detail dari timeline tersebut. Berikut tampilan pada halaman detail.
+
+![Halaman detail](/development-journey/finish-good-detail-1.png)
+
+### Breadcrumb
+
+Pada halaman detail di atas terdapat breadcrumb yang menunjukkan posisi user saat ini. Breadcrumb tersebut dapat di klik untuk kembali ke halaman sebelumnya. Breadcrumb tersebut di ambil dari URL parameter `?product_id=1` dan `?parameter_id=1`.
+
+![Breadcrumb](/development-journey/finish-good-detail-3.png)
+
+### Detail deskripsi
+
+Pada bagian detail deskripsi terdapat judul dan deskripsi dari timeline tersebut. Status tersebut dapat di ubah hanya oleh `office`. Deskripsi berjumlah 5 accordion jika data tidak diisi maka accordion tersebut tidak akan muncul atau bertuliskan `NA`. Accordion diambil dari database dan dapat di tambahkan atau dihapus hanya oleh `office`.
+
+### Data detail
+
+Data detail menampilkan data yang di input oleh `office`. Data tersebut dapat di tambahkan atau dihapus hanya oleh `office`. Data tersebut di ambil dari database.
+Berikut tampilan data detail.
+
+![Data detail](/development-journey/finish-good-detail-4.png)
+
+form input yang digunakan pada data detail sebagai berikut :
+
+1. No urut : inputan berupa angka dan otomatis bertambah terus
+2. Nama dokumen : inputan berupa text singkat
+3. Proses : inputan berupa angka dengan satuan %
+4. ...

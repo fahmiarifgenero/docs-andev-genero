@@ -1,0 +1,66 @@
+# Report Analysis - Finish good
+
+import { Callout } from "nextra/components";
+
+<Callout type="warning" emoji="⚠️">
+  Masih Work In Progress
+</Callout>
+
+Halaman ini berisi laporan dari hasil analisis yang telah dilakukan oleh tim
+
+Berikut filetree dari laporan yang telah dibuat
+
+import { FileTree } from "nextra/components";
+
+<FileTree>
+  <FileTree.Folder name="resource" defaultOpen>
+    <FileTree.Folder name="views" defaultOpen>
+      <FileTree.Folder name="pages" defaultOpen>
+        <FileTree.Folder name="report-analysis" defaultOpen>
+          <FileTree.File name="finish-good.blade.php" />
+        </FileTree.Folder>
+      </FileTree.Folder>
+    </FileTree.Folder>
+  </FileTree.Folder>
+</FileTree>
+
+## Body content
+
+Halaman ini menampilkan tabel yang berisi data dari hasil analisis yang telah dilakukan oleh user,
+
+![Finish Good Report Analysis](/report-analysis/finish-good-1.png)
+
+![Finish Good Report Analysis](/report-analysis/finish-good-2.png)
+
+Dari 2 gambar tersebut, pada bagian atas terdapat 3 bagian yaitu :
+
+| Item                 | Deskripsi                                                                                                                         |
+| -------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| Button `Upload File` | akan mengarahkan ke halaman tambah data yang berada pada URL `/report-analysis/finish-good/create`                                |
+| Filter Bulan         | dimana user dapat memilih bulan yang ingin ditampilkan datanya dan akan query menggunakan parameter bulan yang dipilih            |
+| Filter Tahun         | filter tahun sama seperti pada filter bulan, yaitu menggunakan select box dan akan query menggunakan parameter tahun yang dipilih |
+
+Pada bagian tabel menggunakan library [datatabel](https://datatables.net/) untuk memudahkan pengembangan dan code yang digunakan seperti berikut :
+
+```html filename="resource/views/pages/report-analysis/finish-good.blade.php"
+<table>
+  <thead>
+    <tr>
+      <th>No</th>
+      <th>Nama Item</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Aza 20 Cream</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <th>No</th>
+      <th>Nama Item</th>
+    </tr>
+  </tfoot>
+</table>
+```
