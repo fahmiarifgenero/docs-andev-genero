@@ -11,8 +11,10 @@ import { FileTree } from "nextra/components";
     <FileTree.Folder name="views" defaultOpen>
       <FileTree.Folder name="pages" defaultOpen>
         <FileTree.Folder name="development-journey" defaultOpen>
-          <FileTree.File name="index.blade.php" />
-          <FileTree.File name="detail.blade.php" />
+          <FileTree.Folder name="eksternal" defaultOpen>
+            <FileTree.File name="index.blade.php" />
+            <FileTree.File name="detail.blade.php" />
+          </FileTree.Folder>
         </FileTree.Folder>
       </FileTree.Folder>
     </FileTree.Folder>
@@ -63,3 +65,17 @@ Pada halaman detail di atas terdapat breadcrumb yang menunjukkan posisi user saa
 ### Detail deskripsi
 
 Pada bagian detail deskripsi terdapat judul dan deskripsi dari timeline tersebut. Status tersebut dapat di ubah hanya oleh `office`. Deskripsi berjumlah 5 accordion jika data tidak diisi maka accordion tersebut tidak akan muncul atau bertuliskan `NA`. Accordion diambil dari database dan dapat di tambahkan atau dihapus hanya oleh `office`.
+
+### Data detail
+
+Data detail menampilkan data yang di input oleh `office`. Data tersebut dapat di tambahkan atau dihapus hanya oleh `office`. Data tersebut di ambil dari database.
+Berikut tampilan data detail.
+
+![Data detail](/development-journey/finish-good-detail-4.png)
+
+form input yang digunakan pada data detail sebagai berikut :
+
+1. No urut : inputan berupa angka dan otomatis bertambah terus
+2. Nama dokumen : inputan berupa text singkat
+3. Proses : inputan berupa angka dengan satuan %
+4. ...
