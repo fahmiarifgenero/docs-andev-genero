@@ -46,23 +46,23 @@
     }
   },
   "-": {
-    "title": "Dashboard",
+    "title": "Front View",
     "type": "separator"
   },
-  "dashboard-development-journey": "Development Journey",
-  "dashboard-rpv-riv": "RPV & RIV",
-  "dashboard-report-analysis": "Report Analysis",
-  "dashboard-lembar-kerja-analis": "Lembar Kerja Analis",
-  "dashboard-jadwal-stabilita": "Jadwal Stabilita",
+  "front-view-development-journey": "Development Journey",
+  "front-view-rpv-riv": "RPV & RIV",
+  "front-view-report-analysis": "Report Analysis",
+  "front-view-lembar-kerja-analis": "Lembar Kerja Analis",
+  "front-view-jadwal-stabilita": "Jadwal Stabilita",
   "--": {
-    "title": "Halaman Edit",
+    "title": "Rear View",
     "type": "separator"
   },
-  "halaman-edit-development-journey": "Development Journey",
-  "halaman-edit-rpv-riv": "RPV & RIV",
-  "halaman-edit-report-analysis": "Report Analysis",
-  "halaman-edit-lembar-kerja-analis": "Lembar Kerja Analis",
-  "halaman-edit-jadwal-stabilita": "Jadwal Stabilita",
+  "rear-view-development-journey": "Development Journey",
+  "rear-view-rpv-riv": "RPV & RIV",
+  "rear-view-report-analysis": "Report Analysis",
+  "rear-view-lembar-kerja-analis": "Lembar Kerja Analis",
+  "rear-view-jadwal-stabilita": "Jadwal Stabilita",
   "---": {
     "title": "Other",
     "type": "separator"
