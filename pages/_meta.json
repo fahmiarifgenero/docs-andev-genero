@@ -23,8 +23,14 @@
       "breadcrumb": false
     }
   },
-  "dashboard-home": {
-    "title": "Dashboard Home",
+  "front-view-index": {
+    "title": "Index Dashboard",
+    "theme": {
+      "breadcrumb": false
+    }
+  },
+  "rear-view-index": {
+    "title": "Index Halaman Edit",
     "theme": {
       "breadcrumb": false
     }
@@ -33,14 +39,14 @@
     "title": "Layout",
     "type": "separator"
   },
-  "layout-home": {
-    "title": "Layout Dashboard",
+  "layout-front-view": {
+    "title": "Layout Front View",
     "theme": {
       "breadcrumb": false
     }
   },
-  "layout-edit": {
-    "title": "Layout Halaman Edit",
+  "layout-rear-view": {
+    "title": "Layout Rear View",
     "theme": {
       "breadcrumb": false
     }

@@ -1,6 +1,6 @@
 # Development journey - Eksternal
 
-Halaman dashboard home ini dapat di akses dengan URL `/development-journey/eksternal`
+Halaman development journey - eksternal ini dapat di akses dengan URL `/development-journey/eksternal`
 
 Berikut filetree pada halaman ini:
 
@@ -21,9 +21,9 @@ import { FileTree } from "nextra/components";
   </FileTree.Folder>
 </FileTree>
 
-## Halaman Depan
+## Tampilan
 
-Halaman depan ini menampilkan timelin dari suatu produk.
+Halaman depan ini menampilkan timelin dari suatu produk yang di dalamnya terdapat paramater dari tiap produk. Parameter dapat berubah - ubah (dinamis). Pada contoh di gambar menggunakan 3 parameter yaitu `BPO`, `Adapalene` dan `Nipagin`.
 
 ![Halaman Depan](/development-journey/finish-good-1.png)
 
@@ -48,7 +48,7 @@ Status tersebut dapat di ubah hanya oleh `office`. Timeline ini dalam 1 paramete
 
 ## Halaman detail
 
-Untuk mengarahkan ke halaman detail dibutuhkan query pada URL _contoh:_ `?id=1`. Pada halaman detail menampilkan detail dari satu timeline, misal ambil 1 timeline dari parameter `BPO` pada produk `Aza 20 Cream`.
+Untuk mengarahkan ke halaman detail dibutuhkan query pada URL contoh: `?id=1`. Pada halaman detail menampilkan detail dari satu timeline, misal ambil `id` ke 1 dari timeline parameter yaitu `BPO` pada produk `Aza 20 Cream`.
 
 ![Pilih halaman detail](/development-journey/finish-good-detail-2.png)
 
@@ -75,7 +75,18 @@ Berikut tampilan data detail.
 
 form input yang digunakan pada data detail sebagai berikut :
 
-1. No urut : inputan berupa angka dan otomatis bertambah terus
-2. Nama dokumen : inputan berupa text singkat
-3. Proses : inputan berupa angka dengan satuan %
-4. ...
+| Nama Item    | Deskripsi                                                                                                                                                                     |
+| ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| No Urut      | Berupa `number` dimulai dari 1 dan akan selalu bertambah jika data ditambahkan                                                                                                |
+| Nama Dokumen | Berupa `string` dan tidak memerlukan editor                                                                                                                                   |
+| Progress     | Input berupa `number` yang bisa dimasukkan dengan angka 1 - 100, dengan memiliki fitur berubah - ubah warna sesuai nilai yang dimasukkan dapat dilihat pada tab dibawah tabel |
+| Keterangan   | Berupa deskripsi singkat dan membutuhkan editor dengan fitur `WYSIWYG`                                                                                                        |
+| Download     | Berupa `button` untuk mendownload file yang telah di upload                                                                                                                   |
+
+import { Tabs, Tab } from "nextra/components";
+
+<Tabs items={["merah", "kuning", "hijau"]}>
+  <Tab>Warna merah akan muncul ketika nilai input dibawah 30 ( x < 30 )</Tab>
+  <Tab>Warna kuning akan muncul ketika nilai input diantara 30 dan 70 ( 30 < x < 70 )</Tab>
+  <Tab>Warna hijau akan muncul ketika nilai input di atas 70 ( 70 < x )</Tab>
+</Tabs>

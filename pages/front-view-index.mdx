@@ -1,6 +1,19 @@
-# Home
+# Front View
 
-Halaman dashboard home ini dapat di akses dengan URL `/home`
+Halaman dashboard home ini dapat di akses dengan URL `/home` dan untuk penempatan file berada dapat dilihat file tree dibawah ini
+
+import { FileTree } from "nextra/components";
+
+<FileTree>
+  <FileTree.Folder name="resource" defaultOpen>
+    <FileTree.Folder name="views" defaultOpen>
+      <FileTree.Folder name="front-view" defaultOpen>
+          <FileTree.File name="index.blade.php" />
+      </FileTree.Folder>
+    </FileTree.Folder>
+
+  </FileTree.Folder>
+</FileTree>
 
 ## Interface
 
