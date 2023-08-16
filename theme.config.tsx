@@ -43,6 +43,10 @@ const config: DocsThemeConfig = {
   navbar: {
     extraContent: <a href="https://google.com">Hello</a>,
   },
+  primaryHue: {
+    dark: 193,
+    light: 265,
+  },
 };
 
 export default config;
