@@ -1,6 +1,6 @@
 # Front View
 
-Halaman dashboard home ini dapat di akses dengan URL `/home` dan untuk penempatan file berada dapat dilihat file tree dibawah ini
+Halaman dashboard home ini dapat di akses dengan URL `/home`. User yang dapat mengakses halaman ini adalah `guest`, `user`, `office` dan `admin`. Struktur folder halaman _front-view_ ini adalah sebagai berikut:
 
 import { FileTree } from "nextra/components";
 
@@ -8,7 +8,20 @@ import { FileTree } from "nextra/components";
   <FileTree.Folder name="resource" defaultOpen>
     <FileTree.Folder name="views" defaultOpen>
       <FileTree.Folder name="front-view" defaultOpen>
-          <FileTree.File name="index.blade.php" />
+        <FileTree.Folder name="layouts" defaultOpen>
+          <FileTree.File name="app.blade.php" />
+          <FileTree.File name="footer.blade.php" />
+          <FileTree.File name="header.blade.php" />
+          <FileTree.File name="master.blade.php" />
+          <FileTree.File name="sidebar.blade.php" />
+        </FileTree.Folder>
+        <FileTree.Folder name="pages">
+          <FileTree.Folder name="...">
+          </FileTree.Folder>
+          <FileTree.File name="blank.blade.php" />
+          <FileTree.File name="docs.blade.php" />
+        </FileTree.Folder>
+        <FileTree.File name="index.blade.php" />
       </FileTree.Folder>
     </FileTree.Folder>
 
@@ -55,7 +68,7 @@ Navigasi untuk mengarahkan user ke halaman - halaman yang ada pada aplikasi ini.
 
 Bagian kiri atas terdapat judul atau yang biasa disebut breadcrumb. Breadcrumb ini menunjukkan posisi user pada aplikasi ini. Breadcrumb ini bersifat statis. Pada bagian tengah terdapat grafik yang besar. Grafik ini menampilkan kesimpulan data yang ada pada database.
 
-Grafik menggunakan [`echart`](https://echarts.apache.org/en/index.html) dan menggunakan common js, berikut contoh penggunakan grafik pada halaman `home`
+Grafik menggunakan [echart](https://echarts.apache.org/en/index.html) dan menggunakan common js, berikut contoh penggunakan grafik pada halaman `home`
 
 ```blade filename="resource/views/home.blade.php"
 @push('head-script')
@@ -63,32 +76,32 @@ Grafik menggunakan [`echart`](https://echarts.apache.org/en/index.html) dan meng
 @endpush
 ```
 
-```blade filename="resource/views/home.blade.php"
-<div id="main-1" class="d-flex"></div>
+```html filename="resource/views/home.blade.php"
+<div id="output-analisa" class="d-flex "></div>
 ```
 
 ```blade filename="resource/views/home.blade.php"
-<script type="text/javascript">
-  var myChart = echarts.init(document.getElementById('main-1'), null, {
-    width: 600,
-    height: 400
-  });
-
-  var option = {
-    // other options
-    series: [{ type: 'bar' }, { type: 'bar' }, { type: 'bar' },]
-  };
-
-  myChart.setOption(option);
+<script type="text/javascript" src="{{ asset('js/diagram/output-andev-1.js') }}">
 </script>
+```
+
+```js filename="public/js/diagram/output-andev-1.js"
+var myChart = echarts.init(document.getElementById("output-analisa"), null, {
+  width: 1200,
+  height: 400,
+});
+
+var option = {
+  // all option here
+};
+myChart.setOption(option);
 ```
 
 import { Callout } from "nextra/components";
 
-<Callout type="warning">Bagian grafik masih dalam tahap perancangan</Callout>
+Garifk menampilkan 5 data yaitu :
 
-Nantinya grafik akan menampilkan 5 data yaitu :
-
-1. Validated methode / metode yang telah divalidasi
-2. Methodes refer to FI VI / metode yang merujuk ke FI VI
-3.
+1. Output analisa
+2. Output riset dan validasi
+3. Output dokumen
+4. Complience and Performance instrument
