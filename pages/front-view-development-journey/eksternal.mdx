@@ -2,24 +2,30 @@
 
 Halaman development journey - eksternal ini dapat di akses dengan URL `/development-journey/eksternal`
 
-Berikut filetree pada halaman ini:
+## File Tree
 
 import { FileTree } from "nextra/components";
 
 <FileTree>
   <FileTree.Folder name="resource" defaultOpen>
     <FileTree.Folder name="views" defaultOpen>
-      <FileTree.Folder name="pages" defaultOpen>
-        <FileTree.Folder name="development-journey" defaultOpen>
-          <FileTree.Folder name="eksternal" defaultOpen>
-            <FileTree.File name="index.blade.php" />
-            <FileTree.File name="detail.blade.php" />
+      <FileTree.Folder name="front-view" defaultOpen>
+        <FileTree.Folder name="pages" defaultOpen>
+          <FileTree.Folder name="development-journey" defaultOpen>
+            <FileTree.Folder name="eksternal" defaultOpen>
+              <FileTree.File name="index.blade.php" />
+              <FileTree.File name="detail.blade.php" />
+            </FileTree.Folder>
           </FileTree.Folder>
         </FileTree.Folder>
       </FileTree.Folder>
     </FileTree.Folder>
   </FileTree.Folder>
 </FileTree>
+
+## _Authentication_
+
+User yang dapat mengakses halaman ini adalah `user`, `office` dan `admin`.
 
 ## Tampilan
 
