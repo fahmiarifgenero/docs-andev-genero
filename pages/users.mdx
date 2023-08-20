@@ -26,6 +26,7 @@ import { FileTree } from "nextra/components";
 
 ## Halaman Register
 
+<<<<<<< HEAD
 Halaman Register didapatkan dari Laravel UI pada saat instalasi project menggunakan Auth Scaffolding `php artisan ui bootstrap --auth`. Dan untuk list user ada pada URL `/register`.
 
 ![Register Page](/auth/register-page.png)
@@ -37,6 +38,11 @@ Halaman Login didapatkan dari Laravel UI pada saat instalasi project menggunakan
 ![Login Page](/auth/login-page.png)
 
 Untuk user yang sudah berhasil masuk dapat cek pada URL `/users` atau `/registered`.
+=======
+Halaman Register / Login didapatkan dari Laravel UI pada saat instalasi project menggunakan Auth Scaffolding `php artisan ui bootstrap --auth`. Dan untuk list user ada pada URL `/users`.
+
+![Register Page](/register-page.png)
+>>>>>>> 98cfc75 (add detail on other page, modified page eksternal on development journey)
 
 ## Flow Register User
 
@@ -54,14 +60,18 @@ Aplikasi ini tidak menggunakan faktor 2FA ataupun fitur lupa password. <mark>Jik
 
 Secara default validasi user yang berhasil registrasi dapat mengakses halaman `/registered`. Berikut database `user` di dalam `users`.
 
+<<<<<<< HEAD
 ![](/database/database-user.png)
+=======
+![Database User](/user/database-user.png)
+>>>>>>> 98cfc75 (add detail on other page, modified page eksternal on development journey)
 
 Perlu adanya penambahan column untuk menentukan level user. Level user yang dibutuhkan pada aplikasi ini ada 4 level, diantaranya :
 
-- Admin
-- Office
-- User
-- Guest
+- Admin (Super Admin)
+- Office (Admin)
+- User (User)
+- Guest (Guest)
 
 ## Authorization
 
