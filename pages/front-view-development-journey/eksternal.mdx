@@ -1,6 +1,21 @@
 # Development journey - Eksternal
 
-Halaman development journey - eksternal ini dapat di akses dengan URL `/development-journey/eksternal`
+Halaman development journey - eksternal ini dapat di akses dengan URL `/development-journey/eksternal`. Terdapat 2 page yaitu halaman depan dan halaman detail, dapat dilihat pada [file tree](#file-tree) dibawah ini.
+
+import { Callout } from "nextra/components";
+
+## User Level Akses
+
+Detail role level akses dapat dilihat pada tabel berikut :
+
+| Role   | Deskripsi                                          |
+| ------ | -------------------------------------------------- |
+| Guest  | Tidak mendapatkan fitur CRUD                       |
+| User   | Dapat menambahkan, melihat dan update data         |
+| Office | Dapat menambahkan, melihat, update dan delete data |
+| Admin  | Dapat menambahkan, melihat, update dan delete data |
+
+## File Tree
 
 Berikut filetree pada halaman ini:
 
@@ -9,11 +24,13 @@ import { FileTree } from "nextra/components";
 <FileTree>
   <FileTree.Folder name="resource" defaultOpen>
     <FileTree.Folder name="views" defaultOpen>
-      <FileTree.Folder name="pages" defaultOpen>
-        <FileTree.Folder name="development-journey" defaultOpen>
-          <FileTree.Folder name="eksternal" defaultOpen>
-            <FileTree.File name="index.blade.php" />
-            <FileTree.File name="detail.blade.php" />
+      <FileTree.Folder name="front-view" defaultOpen>
+        <FileTree.Folder name="pages" defaultOpen>
+          <FileTree.Folder name="development-journey" defaultOpen>
+            <FileTree.Folder name="eksternal" defaultOpen>
+              <FileTree.File name="index.blade.php" />
+              <FileTree.File name="detail.blade.php" />
+            </FileTree.Folder>
           </FileTree.Folder>
         </FileTree.Folder>
       </FileTree.Folder>
@@ -23,30 +40,44 @@ import { FileTree } from "nextra/components";
 
 ## Tampilan
 
-Halaman depan ini menampilkan timelin dari suatu produk yang di dalamnya terdapat paramater dari tiap produk. Parameter dapat berubah - ubah (dinamis). Pada contoh di gambar menggunakan 3 parameter yaitu `BPO`, `Adapalene` dan `Nipagin`.
+Halaman depan ini menampilkan timeline dari suatu produk dengan menggunakan [layout front view](/layout-front-view) dapat dilihat pada gambar dibawah ini
 
 ![Halaman Depan](/front-view/development-journey/finish-good-1.png)
 
 ### List Product
 
-List produk terdapat pada pojok kanan atas menggunakan `select` yang dapat di pilih sesuai dengan produk yang di inginkan. List produk tersebut di ambil dari database dan dapat ditambahkan atau dihapus hanya oleh `admin`. Untuk query produk dapat menggunakan URL parameter `?product_id=1` atau `?product_name=nama_produk`.
+<Callout type="warning" emoji="⚠️">
+  Penggunaan query produk dengan URL belum berjalan
+</Callout>
+
+List produk terdapat pada pojok kanan atas menggunakan `select` yang dapat di pilih sesuai dengan produk yang di inginkan. List produk tersebut di ambil dari database dan dapat ditambahkan atau dihapus hanya oleh `office` dan `admin`. Untuk query produk dapat menggunakan URL parameter `?product_id=1` atau `?product_name=nama_produk`
+
+![List Produk](/development-journey/finish-good-5.png)
+
+![List Produk](/development-journey/finish-good-4.png)
 
 ### List parameter
 
-Contoh pada produk Aza 20 Cream menampilkan 3 parameter yaitu `BPO`, `Adapalene` dan `Nipagin`. Data tersebut di ambil dari database dan dapat di tambahkan atau dihapus hanya oleh `admin`.
+Contoh pada produk Aza 20 Cream menampilkan 3 parameter yaitu `BPO`, `Adapalene` dan `Nipagin`. Data tersebut di ambil dari database dan dapat di tambahkan atau dihapus hanya oleh `office` dan `admin. Jika query dibutuhkan dapat menggunakan URL parameter `?parameter_id=1`atau`?parameter_name=nama_parameter`.
 
-### Timeline Product dalam 1 parameter
+![Parameter Produk](/development-journey/finish-good-6.png)
+
+### Timeline Product
 
 Timeline urut dari atas kebawah yaitu lebih baru ke lebih lama. Pada bagian kiri timeline terdapat waktu menunjukkan `timestamp` saat pertama kali data dibuat. Pada bagian kanan dari titik terdapat judul dan dibawah terdapat deskripsi singkat dari judul tersebut. Pada bagian kanan terdapat `badge` yang menunjukkan status dari data tersebut. Terdapat 4 status yaitu :
 
-1. `riset`
+1. `listing resource`
 2. `pending`
 3. `work in progress`
 4. `done`
 
-Status tersebut dapat di ubah hanya oleh `office`. Timeline ini dalam 1 parameter, untuk isi parameter lainnya serupa dengan ini.
+Status tersebut dapat di ubah hanya oleh `office` dan `admin`. Timeline ini dalam 1 parameter, untuk isi parameter lainnya serupa dengan ini.
 
 ## Halaman detail
+
+<Callout type="warning" emoji="⚠️">
+  Penggunaan query detail produk dengan URL belum berjalan
+</Callout>
 
 Untuk mengarahkan ke halaman detail dibutuhkan query pada URL contoh: `?id=1`. Pada halaman detail menampilkan detail dari satu timeline, misal ambil `id` ke 1 dari timeline parameter yaitu `BPO` pada produk `Aza 20 Cream`.
 
@@ -64,7 +95,9 @@ Pada halaman detail di atas terdapat breadcrumb yang menunjukkan posisi user saa
 
 ### Detail deskripsi
 
-Pada bagian detail deskripsi terdapat judul dan deskripsi dari timeline tersebut. Status tersebut dapat di ubah hanya oleh `office`. Deskripsi berjumlah 5 accordion jika data tidak diisi maka accordion tersebut tidak akan muncul atau bertuliskan `NA`. Accordion diambil dari database dan dapat di tambahkan atau dihapus hanya oleh `office`.
+Pada bagian detail deskripsi terdapat judul dan deskripsi dari timeline tersebut. Status tersebut dapat di ubah hanya oleh `office` dan `admin`. Deskripsi berjumlah 5 accordion jika data tidak diisi maka accordion tersebut tidak akan muncul atau bertuliskan `NA`. Accordion diambil dari database dan dapat di tambahkan atau dihapus hanya oleh `office` dan `admin`.
+
+![Detail deskripsi](/development-journey/finish-good-detail-5.png)
 
 ### Data detail
 
