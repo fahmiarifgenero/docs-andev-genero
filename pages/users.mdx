@@ -8,17 +8,14 @@ import { FileTree } from "nextra/components";
   <FileTree.Folder name="resources" defaultOpen>
     <FileTree.Folder name="views" defaultOpen>
       <FileTree.Folder name="auth" defaultOpen>
-        <FileTree.Folder name="passwords" defaultOpen>
+        <FileTree.File name="login.blade.php" />
+        <FileTree.File name="register.blade.php" />
+        <FileTree.File name="verify.blade.php" />
+        <FileTree.Folder name="password" defaultOpen>
           <FileTree.File name="confirm.blade.php" />
           <FileTree.File name="email.blade.php" />
           <FileTree.File name="reset.blade.php" />
         </FileTree.Folder>
-        <FileTree.Folder name="layouts" defaultOpen>
-          <FileTree.File name="app.blade.php" />
-        </FileTree.Folder>
-        <FileTree.File name="login.blade.php" />
-        <FileTree.File name="register.blade.php" />
-        <FileTree.File name="verify.blade.php" />
       </FileTree.Folder>
     </FileTree.Folder>
   </FileTree.Folder>
