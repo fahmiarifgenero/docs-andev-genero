@@ -8,12 +8,12 @@ import { Callout } from "nextra/components";
 
 Detail role level akses dapat dilihat pada tabel berikut :
 
-| Role   | Deskripsi                                          |
-| ------ | -------------------------------------------------- |
-| Guest  | Tidak mendapatkan fitur CRUD                       |
-| User   | Dapat menambahkan, melihat dan update data         |
-| Office | Dapat menambahkan, melihat, update dan delete data |
-| Admin  | Dapat menambahkan, melihat, update dan delete data |
+| Role   | Deskripsi                                                                           | Create | Read | Update | Delete |
+| ------ | ----------------------------------------------------------------------------------- | :----: | :--: | :----: | :----: |
+| Guest  | Tidak mendapatkan fitur CRUD, diharuskan <mark>login</mark> jika ingin melihat data |   ❌   |  ❌  |   ❌   |   ❌   |
+| User   | Dapat menambahkan, melihat dan update data (CRU)                                    |   ✔️   |  ✔️  |   ✔️   |   ❌   |
+| Office | Dapat menambahkan, melihat, update dan delete data (CRUD)                           |   ✔️   |  ✔️  |   ✔️   |   ✔️   |
+| Admin  | Dapat menambahkan, melihat, update dan delete data (CRUD)                           |   ✔️   |  ✔️  |   ✔️   |   ✔️   |
 
 ## File Tree
 
@@ -36,10 +36,6 @@ import { FileTree } from "nextra/components";
   </FileTree.Folder>
 </FileTree>
 
-## _Authentication_
-
-User yang dapat mengakses halaman ini adalah `user`, `office` dan `admin`.
-
 ## Tampilan
 
 Halaman depan ini menampilkan timeline dari suatu produk dengan menggunakan [layout front view](/layout-front-view) dapat dilihat pada gambar dibawah ini
@@ -52,23 +48,27 @@ Halaman depan ini menampilkan timeline dari suatu produk dengan menggunakan [lay
   Penggunaan query produk dengan URL belum berjalan
 </Callout>
 
-List produk terdapat pada pojok kanan atas menggunakan `select` yang dapat di pilih sesuai dengan produk yang di inginkan. List produk tersebut di ambil dari database dan dapat ditambahkan atau dihapus hanya oleh `office` dan `admin`. Untuk query produk dapat menggunakan URL parameter `?product_id=1` atau `?product_name=nama_produk`
+List produk terdapat pada pojok kanan atas menggunakan `select` yang dapat di pilih sesuai dengan produk yang di inginkan. List produk tersebut di ambil dari database. Untuk query produk dapat menggunakan URL parameter `?product_id=1` atau `?product_name=nama_produk`.
 
-![List Produk](/development-journey/finish-good-5.png)
+Note : Produk hanya dapat ditambah dan dihapus oleh <mark>office</mark> dan <mark>admin</mark>.
 
-![List Produk](/development-journey/finish-good-4.png)
+![List Produk](/front-view/development-journey/finish-good-5.png)
+
+![List Produk](/front-view/development-journey/finish-good-4.png)
 
 ### List parameter
 
-Contoh pada produk Aza 20 Cream menampilkan 3 parameter yaitu `BPO`, `Adapalene` dan `Nipagin`. Data tersebut di ambil dari database dan dapat di tambahkan atau dihapus hanya oleh `office` dan `admin. Jika query dibutuhkan dapat menggunakan URL parameter `?parameter_id=1`atau`?parameter_name=nama_parameter`.
+Contoh pada produk Aza 20 Cream menampilkan 3 parameter yaitu `BPO`, `Adapalene` dan `Nipagin`. Parameter di tiap - tiap produk bisa berbeda - beda, ada yang berjumlah 1, 2 atau 3. Pada contoh yang diambil terdapat 3 parameter. Data tersebut di ambil dari database. Jika query dibutuhkan dapat menggunakan URL parameter `?parameter_id=1`atau`?parameter_name=nama_parameter`.
 
-![Parameter Produk](/development-journey/finish-good-6.png)
+Note : Produk hanya dapat ditambah dan dihapus oleh <mark>office</mark> dan <mark>admin</mark>.
+
+![Parameter Produk](/front-view/development-journey/finish-good-6.png)
 
 ### Timeline Product
 
 Timeline urut dari atas kebawah yaitu lebih baru ke lebih lama. Pada bagian kiri timeline terdapat waktu menunjukkan `timestamp` saat pertama kali data dibuat. Pada bagian kanan dari titik terdapat judul dan dibawah terdapat deskripsi singkat dari judul tersebut. Pada bagian kanan terdapat `badge` yang menunjukkan status dari data tersebut. Terdapat 4 status yaitu :
 
-1. `listing resource`
+1. `kaji resource`
 2. `pending`
 3. `work in progress`
 4. `done`
@@ -99,7 +99,7 @@ Pada halaman detail di atas terdapat breadcrumb yang menunjukkan posisi user saa
 
 Pada bagian detail deskripsi terdapat judul dan deskripsi dari timeline tersebut. Status tersebut dapat di ubah hanya oleh `office` dan `admin`. Deskripsi berjumlah 5 accordion jika data tidak diisi maka accordion tersebut tidak akan muncul atau bertuliskan `NA`. Accordion diambil dari database dan dapat di tambahkan atau dihapus hanya oleh `office` dan `admin`.
 
-![Detail deskripsi](/development-journey/finish-good-detail-5.png)
+![Detail deskripsi](/front-view/development-journey/finish-good-detail-5.png)
 
 ### Data detail
 

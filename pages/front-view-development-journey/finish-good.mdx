@@ -1,8 +1,21 @@
 # Development journey - Finish Good
 
-Halaman dashboard home ini dapat di akses dengan URL `/development-journey/finish-good`
+Halaman development journey - finish good ini dapat di akses dengan URL `/development-journey/finish-good`. Terdapat 2 page yaitu halaman depan dan halaman detail, dapat dilihat pada [file tree](#file-tree) dibawah ini.
 
-Berikut filetree pada halaman ini:
+import { Callout } from "nextra/components";
+
+## User Level Akses
+
+Detail role level akses dapat dilihat pada tabel berikut :
+
+| Role   | Deskripsi                                                                           | Create | Read | Update | Delete |
+| ------ | ----------------------------------------------------------------------------------- | :----: | :--: | :----: | :----: |
+| Guest  | Tidak mendapatkan fitur CRUD, diharuskan <mark>login</mark> jika ingin melihat data |   ❌   |  ❌  |   ❌   |   ❌   |
+| User   | Dapat menambahkan, melihat dan update data (CRU)                                    |   ✔️   |  ✔️  |   ✔️   |   ❌   |
+| Office | Dapat menambahkan, melihat, update dan delete data (CRUD)                           |   ✔️   |  ✔️  |   ✔️   |   ✔️   |
+| Admin  | Dapat menambahkan, melihat, update dan delete data (CRUD)                           |   ✔️   |  ✔️  |   ✔️   |   ✔️   |
+
+## File Tree
 
 import { FileTree } from "nextra/components";
 
@@ -21,34 +34,52 @@ import { FileTree } from "nextra/components";
   </FileTree.Folder>
 </FileTree>
 
-## Halaman Depan
+## Tampilan
 
-Halaman depan ini menampilkan timelin dari suatu produk.
+Halaman depan ini menampilkan timeline dari suatu produk dengan menggunakan [layout front view](/layout-front-view) dapat dilihat pada gambar dibawah ini
 
 ![Halaman Depan](/front-view/development-journey/finish-good-1.png)
 
 ### List Product
 
-List produk terdapat pada pojok kanan atas menggunakan `select` yang dapat di pilih sesuai dengan produk yang di inginkan. List produk tersebut di ambil dari database dan dapat ditambahkan atau dihapus hanya oleh `admin`. Untuk query produk dapat menggunakan URL parameter `?product_id=1` atau `?product_name=nama_produk`.
+<Callout type="warning" emoji="⚠️">
+  Penggunaan query produk dengan URL belum berjalan
+</Callout>
+
+List produk terdapat pada pojok kanan atas menggunakan `select` yang dapat di pilih sesuai dengan produk yang di inginkan. List produk tersebut di ambil dari database. Untuk query produk dapat menggunakan URL parameter `?product_id=1` atau `?product_name=nama_produk`.
+
+Note : Produk hanya dapat ditambah dan dihapus oleh <mark>office</mark> dan <mark>admin</mark>.
+
+![List Produk](/front-view/development-journey/finish-good-5.png)
+
+![List Produk](/front-view/development-journey/finish-good-4.png)
 
 ### List parameter
 
-Contoh pada produk Aza 20 Cream menampilkan 3 parameter yaitu `BPO`, `Adapalene` dan `Nipagin`. Data tersebut di ambil dari database dan dapat di tambahkan atau dihapus hanya oleh `admin`.
+Contoh pada produk Aza 20 Cream menampilkan 3 parameter yaitu `BPO`, `Adapalene` dan `Nipagin`. Parameter di tiap - tiap produk bisa berbeda - beda, ada yang berjumlah 1, 2 atau 3. Pada contoh yang diambil terdapat 3 parameter. Data tersebut di ambil dari database. Jika query dibutuhkan dapat menggunakan URL parameter `?parameter_id=1`atau`?parameter_name=nama_parameter`.
 
-### Timeline Product dalam 1 parameter
+Note : Produk hanya dapat ditambah dan dihapus oleh <mark>office</mark> dan <mark>admin</mark>.
+
+![Parameter Produk](/front-view/development-journey/finish-good-6.png)
+
+### Timeline Product
 
 Timeline urut dari atas kebawah yaitu lebih baru ke lebih lama. Pada bagian kiri timeline terdapat waktu menunjukkan `timestamp` saat pertama kali data dibuat. Pada bagian kanan dari titik terdapat judul dan dibawah terdapat deskripsi singkat dari judul tersebut. Pada bagian kanan terdapat `badge` yang menunjukkan status dari data tersebut. Terdapat 4 status yaitu :
 
-1. `riset`
+1. `kaji metode`
 2. `pending`
 3. `work in progress`
 4. `done`
 
-Status tersebut dapat di ubah hanya oleh `office`. Timeline ini dalam 1 parameter, untuk isi parameter lainnya serupa dengan ini.
+Status tersebut dapat di ubah hanya oleh `office` dan `admin`. Timeline ini dalam 1 parameter, untuk isi parameter lainnya serupa dengan ini.
 
 ## Halaman detail
 
-Untuk mengarahkan ke halaman detail dibutuhkan query pada URL _contoh:_ `?id=1`. Pada halaman detail menampilkan detail dari satu timeline, misal ambil 1 timeline dari parameter `BPO` pada produk `Aza 20 Cream`.
+<Callout type="warning" emoji="⚠️">
+  Penggunaan query detail produk dengan URL belum berjalan
+</Callout>
+
+Untuk mengarahkan ke halaman detail dibutuhkan query pada URL contoh: `?id=1`. Pada halaman detail menampilkan detail dari satu timeline, misal ambil `id` ke 1 dari timeline parameter yaitu `BPO` pada produk `Aza 20 Cream`.
 
 ![Pilih halaman detail](/front-view/development-journey/finish-good-detail-2.png)
 
@@ -64,7 +95,7 @@ Pada halaman detail di atas terdapat breadcrumb yang menunjukkan posisi user saa
 
 ### Detail deskripsi
 
-Pada bagian detail deskripsi terdapat judul dan deskripsi dari timeline tersebut. Status tersebut dapat di ubah hanya oleh `office`. Deskripsi berjumlah 5 accordion jika data tidak diisi maka accordion tersebut tidak akan muncul atau bertuliskan `NA`. Accordion diambil dari database dan dapat di tambahkan atau dihapus hanya oleh `office`.
+Pada bagian detail deskripsi terdapat judul dan deskripsi dari timeline tersebut. Status tersebut dapat di ubah hanya oleh `office` dan `admin`. Deskripsi berjumlah 5 accordion jika data tidak diisi maka accordion tersebut tidak akan muncul atau bertuliskan `NA`. Accordion diambil dari database dan dapat di tambahkan atau dihapus hanya oleh `office` dan `admin`.
 
 ### Data detail
 
@@ -75,7 +106,18 @@ Berikut tampilan data detail.
 
 form input yang digunakan pada data detail sebagai berikut :
 
-1. No urut : inputan berupa angka dan otomatis bertambah terus
-2. Nama dokumen : inputan berupa text singkat
-3. Proses : inputan berupa angka dengan satuan %
-4. ...
+| Nama Item    | Deskripsi                                                                                                                                                                     |
+| ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| No Urut      | Berupa `number` dimulai dari 1 dan akan selalu bertambah jika data ditambahkan                                                                                                |
+| Nama Dokumen | Berupa `string` dan tidak memerlukan editor                                                                                                                                   |
+| Progress     | Input berupa `number` yang bisa dimasukkan dengan angka 1 - 100, dengan memiliki fitur berubah - ubah warna sesuai nilai yang dimasukkan dapat dilihat pada tab dibawah tabel |
+| Keterangan   | Berupa deskripsi singkat dan membutuhkan editor dengan fitur `WYSIWYG`                                                                                                        |
+| Download     | Berupa `button` untuk mendownload file yang telah di upload                                                                                                                   |
+
+import { Tabs, Tab } from "nextra/components";
+
+<Tabs items={["merah", "kuning", "hijau"]}>
+  <Tab>Warna merah akan muncul ketika nilai input dibawah 30 ( x < 30 )</Tab>
+  <Tab>Warna kuning akan muncul ketika nilai input diantara 30 dan 70 ( 30 < x < 70 )</Tab>
+  <Tab>Warna hijau akan muncul ketika nilai input di atas 70 ( 70 < x )</Tab>
+</Tabs>
