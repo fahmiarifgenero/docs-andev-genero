@@ -1,0 +1,50 @@
+# RPV - RIV (Mikrobiologi)
+
+import { Callout } from "nextra/components";
+
+## User Level Akses
+
+Detail role level akses dapat dilihat pada tabel berikut :
+
+| Role   | Deskripsi                                                                           | Create | Read | Update | Delete |
+| ------ | ----------------------------------------------------------------------------------- | :----: | :--: | :----: | :----: |
+| Guest  | Tidak mendapatkan fitur CRUD, diharuskan <mark>login</mark> jika ingin melihat data |   ❌   |  ❌  |   ❌   |   ❌   |
+| User   | Dapat menambahkan, melihat dan update data (CRU)                                    |   ✔️   |  ✔️  |   ✔️   |   ❌   |
+| Office | Dapat menambahkan, melihat, update dan delete data (CRUD)                           |   ✔️   |  ✔️  |   ✔️   |   ✔️   |
+| Admin  | Dapat menambahkan, melihat, update dan delete data (CRUD)                           |   ✔️   |  ✔️  |   ✔️   |   ✔️   |
+
+## Deskripsi
+
+<Callout type="info">Card tidak akan tampil jika produk sudah dilakukan validasi / verifikasi dilakukan dengan adanya tanda status `done`</Callout>
+
+RPV - RIV kepanjangan dari Rencana Program Validasi - Rencana Induk Validasi dari produk mikrobiologi. Pada halaman ini menampilkan card yang diambil dari database produk mikrobiologi yang telah divalidasi / verifikasi dengan terakhir validasi / verifikasi produk 5 tahun terakhir. Produk yang muncul minimal dalam kurun 4,5 tahun terakhir.
+
+## Tampilan
+
+Tampilan RPV - RIV yaitu :
+
+![Tampilan RPV - RIV](/front-view/rpv-riv/eksternal-1.png)
+
+### Fitur Search
+
+Search yang ada pada pojok kanan atas akan memfilter hasil dari card yang tampilan
+
+### Status
+
+Terdapat status pada tiap - tiap card yang tampil, pada contoh menampilkan status `mencari literatur` dan `Done`. Status tersebut diambil dari database yang sama dengan [development journey](../front-view-development-journey/mikrobiologi#timeline-product) yang menampilkan status terakhir validasi / verifikasi dilakukan.
+
+![Status Card RPV - RIV](/front-view/rpv-riv/eksternal-2.png)
+
+Note: untuk status `mencari literatur` akan diganti menjadi `kaji metode`
+
+### Waktu
+
+Terdapat due date dan waktu pelaksanaan pada card
+
+![Due date TPV - RIV](/front-view/rpv-riv/eksternal-3.png)
+
+Yang bertuliskan `planning` adalah waktu yang tampil tearkhir kali validasi / verifikasi dilakukan dari halaman development journey. Card akan muncul dalam 4,5 tahun terakhir validasi / verifikasi dilakukan. Dan yang bertuliskan `Aktual` adalah waktu yang tampil terakhir kali validasi / verifikasi dilakukan dari halaman development journey.
+
+### Button `Go Somewhere`
+
+Button yang bertulisakan `Go Somewhere` akan mengarahkan ke halaman detail produk mikrobiologi di development journey sesuai dengan produk yang dipilih.
