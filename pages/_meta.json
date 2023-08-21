@@ -73,10 +73,8 @@
     "title": "Other",
     "type": "separator"
   },
-  "complience": "Complience",
-  "advanced": {
-    "title": "Advanced"
-  },
+  "compliance": "Compliance",
+  "instrument-status": "Instrument Status",
   "about": {
     "title": "About",
     "type": "page"
