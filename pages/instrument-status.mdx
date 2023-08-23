@@ -1,0 +1,53 @@
+# Status Instrument Analytical Development
+
+## Deskripsi
+
+Halaman ini menampilkan tabel status alat instrument pada departement Analytical Development, ada 13 data instrument status dan ada 2 indikator terpenuhi atau tidaknya yaitu kalibrasi dan performa. Data status instrument dapat ditambahkan, diupdate dan dihapus oleh user dengan role `office` dan `admin`.
+
+## User Level Akses
+
+Detail role level akses dapat dilihat pada tabel berikut :
+
+| Role   | Deskripsi                                                                           | Create | Read | Update | Delete |
+| ------ | ----------------------------------------------------------------------------------- | :----: | :--: | :----: | :----: |
+| Guest  | Tidak mendapatkan fitur CRUD, diharuskan <mark>login</mark> jika ingin melihat data |   ❌   |  ❌  |   ❌   |   ❌   |
+| User   | Dapat menambahkan, melihat dan update data (CRU)                                    |   ✔️   |  ✔️  |   ✔️   |   ❌   |
+| Office | Dapat menambahkan, melihat, update dan delete data (CRUD)                           |   ✔️   |  ✔️  |   ✔️   |   ✔️   |
+| Admin  | Dapat menambahkan, melihat, update dan delete data (CRUD)                           |   ✔️   |  ✔️  |   ✔️   |   ✔️   |
+
+## File Tree
+
+import { FileTree } from "nextra/components";
+
+<FileTree>
+  <FileTree.Folder name="resource" defaultOpen>
+    <FileTree.Folder name="views" defaultOpen>
+      <FileTree.Folder name="front-view" defaultOpen>
+        <FileTree.Folder name="pages" defaultOpen>
+          <FileTree.Folder name="other" defaultOpen>
+            <FileTree.File name="compliance.blade.php" />
+            <FileTree.File name="instrument-andev.blade.php" />
+          </FileTree.Folder>
+        </FileTree.Folder>
+      </FileTree.Folder>
+    </FileTree.Folder>
+  </FileTree.Folder>
+</FileTree>
+
+## Content
+
+Berikut tampilan content pada halaman instrument andev, terdapat header dan tabel yang berisi data instrument. Bagian header menampilkan judul dan filter data berdasarkan bulan dan tahun.
+
+![Tabel instrument andev](/other/instrument-1.png)
+
+### Header Content
+
+Header content terdiri dari judul dan filter data status instrument berdasarkan bulan dan tahun. Filter data status instrument dapat diubah sesuai dengan bulan dan tahun yang diinginkan.
+
+![Header instrument andev](/other/instrument-2.png)
+
+### Body Content
+
+Data status instrument tampil dengan tabel datatable, data dapat ditambahkan / dihapus oleh `office` dan `admin` untuk penambahan data instrument status pergi ke halaman edit dan pilih instrument andev. Dibagian bawah data status instrument terdapat kesimpulan dan saran. Kesimpulan didapat dari jumlah status yang terceklis dari 13 data (untuk saat ini) dikali 2 yaitu dari `kalibrasi` dan `performa` dengan persentase status instrument didapat dari jumlah status yang terceklis dibagi dengan jumlah data status instrument dikali 100%.
+
+![Body status instrument](/other/instrument-3.png)

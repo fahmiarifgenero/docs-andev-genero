@@ -1,6 +1,7 @@
 # Report Analysis - Finish good
 
 import { Callout } from "nextra/components";
+import { Tabs, Tab } from "nextra/components";
 
 ## Deskripsi
 
@@ -108,3 +109,30 @@ Pada bagian tabel menggunakan library [datatabel](https://datatables.net/) untuk
 ```
 
 Dan untuk feature dari datatable ada 5 dan di generate oleh datatable itu sendiri, yaitu : `Copy`, `Print`, `Excel`, `PDF`, `Column Visibility`
+
+## Tipe Data
+
+Detail data column yang digunakan dalam body content sebagai berikut :
+
+| Item                     | Keterangan                                                                                                                                                                                                              |
+| ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| No                       | Seiring dengan bertambahnya data, number ada pada kolom ini akan bertambah terus, data dimualai dari no 1                                                                                                               |
+| No. Permintaan Analisa   | Pada halaman report analysis, data yang tampil `FG.001.A.23` untuk keterangan lebih lanjut dapat dilihat [disini](#no-permintaan-analisa)                                                                               |
+| No. Laporan Analisa      | Pada halaman report analysis, data yang tampil `J.001.A.23` untuk keterangan lebih lanjut dapat dilihat [disini](#no-laporan-analisa)                                                                                   |
+| Nama Item                | Bisa dalam bentuk <font color="#a476e3"><ins>input</ins></font> dengan string pendek                                                                                                                                    |
+| Kategori                 | Ketegori dalam report analysis ada 3 yaitu `Obat`, `Suplemen` dan `Kosmetik`. Untuk pengisian data bisa dalam bentuk <font color="#a476e3"><ins>checkbox</ins></font>                                                   |
+| PIC                      | PIC adalah Person In Charge yaitu tanggung jawab, dapat menggunakan <font color="#a476e3"><ins>input</ins></font> berupa string pendek                                                                                  |
+| No Bets / No Lot         | Dalam bentuk <font color="#a476e3"><ins>input</ins></font> berupa string pendek                                                                                                                                         |
+| Bulan                    | Dapat menggunakan <font color="#a476e3"><ins>selext box</ins></font> karna data hanya ada `B0`, `B3`, `B6`, `B9`, `B12`, `B18`, `B24` dan `B36` dan diberti tambahan untuk lain-lainnya yaitu input string pendek       |
+| Parameter                | Parameter disini berupa <font color="#a476e3"><ins>multi select</ins></font> dengan pilihan `pemerian`, `pH`, `visko`, `kadar`, `pengawet`, `mikrobiologi`, `BJ`, `disolusi` dan `kadar`                                |
+| Storage                  | Penyimpanan sampel yang digunakan dalam analisis, dapat menggunakan <font color="#a476e3"><ins>multi select</ins></font> dengan pilihan `S30`, `S4O`, `S50` dan `LE`                                                    |
+| Tanggal masuk            | Tanggal masuk sampel yang digunakan dalam analisis, dapat menggunakan <font color="#a476e3"><ins>input</ins></font> berupa type [date](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date)            |
+| Tanggal Estimasi Selesai | Tanggal estimasi selesai sampel yang digunakan dalam analisis, dapat menggunakan <font color="#a476e3"><ins>input</ins></font> berupa type [date](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date) |
+| Tanggal Analisa          | Tanggal analisa sampel yang digunakan dalam analisis, dapat menggunakan <font color="#a476e3"><ins>input</ins></font> berupa type [date](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date)          |
+| Tanggal Selesai Analisa  | Tanggal selesai analisa sampel yang digunakan dalam analisis, dapat menggunakan <font color="#a476e3"><ins>input</ins></font> berupa type [date](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date)  |
+| Nama Analis              | Nama analis yang digunakan dalam analisis, dapat menggunakan <font color="#a476e3"><ins>input</ins></font> berupa string pendek                                                                                         |
+| Download File            | Merupakan <font color="#a476e3"><ins>button</ins></font> yang berfungsi untuk mendownload file yang telah diupload oleh `user`, `office` atau `admin`                                                                   |
+| Status                   | Status dari laporan analisis, dapat menggunakan <font color="#a476e3"><ins>check box</ins></font> dengan pilihan `MS`, `TMS` dan `Pendataan`                                                                            |
+| Keterangan               | Berupa text panjang yang dapat menggunakan <font color="#a476e3"><ins>textarea</ins></font>                                                                                                                             |
+| Action                   | Berupa button yang berfungsi untuk mengedit dan menghapus data, selanjutnya akan mengarahkan ke halaman edit                                                                                                            |
+| Timestamps               | Berupa tanggal dan waktu ketika data terakhir kali di update                                                                                                                                                            |

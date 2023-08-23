@@ -1,0 +1,53 @@
+# Compliance
+
+## Deskripsi
+
+Halaman ini menampilkan tabel kepatuhan terhadap aturan pada laboratorium Analytical Development di PT Genero Pharmaceuticals, ada 155 data compliance dibuat dengan table bootstrap. Data compliance dapat ditambahkan, diupdate dan dihapus oleh user dengan role `office` dan `admin`.
+
+## User Level Akses
+
+Detail role level akses dapat dilihat pada tabel berikut :
+
+| Role   | Deskripsi                                                                           | Create | Read | Update | Delete |
+| ------ | ----------------------------------------------------------------------------------- | :----: | :--: | :----: | :----: |
+| Guest  | Tidak mendapatkan fitur CRUD, diharuskan <mark>login</mark> jika ingin melihat data |   ❌   |  ❌  |   ❌   |   ❌   |
+| User   | Dapat menambahkan, melihat dan update data (CRU)                                    |   ✔️   |  ✔️  |   ✔️   |   ❌   |
+| Office | Dapat menambahkan, melihat, update dan delete data (CRUD)                           |   ✔️   |  ✔️  |   ✔️   |   ✔️   |
+| Admin  | Dapat menambahkan, melihat, update dan delete data (CRUD)                           |   ✔️   |  ✔️  |   ✔️   |   ✔️   |
+
+## File Tree
+
+import { FileTree } from "nextra/components";
+
+<FileTree>
+  <FileTree.Folder name="resource" defaultOpen>
+    <FileTree.Folder name="views" defaultOpen>
+      <FileTree.Folder name="front-view" defaultOpen>
+        <FileTree.Folder name="pages" defaultOpen>
+          <FileTree.Folder name="other" defaultOpen>
+            <FileTree.File name="compliance.blade.php" />
+            <FileTree.File name="instrument-andev.blade.php" />
+          </FileTree.Folder>
+        </FileTree.Folder>
+      </FileTree.Folder>
+    </FileTree.Folder>
+  </FileTree.Folder>
+</FileTree>
+
+## Content
+
+Berikut tampilan content pada halaman compliance, terdapat header dan tabel yang berisi data compliance. Bagian header menampilkan judul dan filter data berdasarkan bulan dan tahun.
+
+![Tabel Compliance](/other/compliance-1.png)
+
+### Header Content
+
+Header content terdiri dari judul dan filter data compliance berdasarkan bulan dan tahun. Filter data compliance dapat diubah sesuai dengan bulan dan tahun yang diinginkan.
+
+![Header Compliance](/other/compliance-2.png)
+
+### Body Content
+
+Data compliance tampil dengan tabel datatable, data dapat ditambahkan / dihapus oleh `office` dan `admin` untuk penambahan data compliance pergi ke halaman edit dan pilih compliance. Dibagian bawah data compliance terdapat kesimpulan dan saran. Kesimpulan didapat dari jumlah status yang terceklis dari 155 data (untuk saat ini) dengan persentase compliance didapat dari jumlah status yang terceklis dibagi dengan jumlah data compliance dikali 100%.
+
+![Body Compliance](/other/compliance-3.png)
